@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>5 short films</title>
+<link rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="boxes">
+	  <a id="box1" class="box" style="background:#333383">
+      <div class="box-image"></div>
+    </a>
+    <a id="box2" class="box" style="background:#dcca75">
+    	<div class="box-image" style="background:url(asset/jupiler.png)"></div>
+      <div class="box-title">
+        <span>JUNIPER CRESCENT</span>
+        <span class="box-type">COMEDY, 27 MINUTES</span>
+        <span class="box-description">Can you get to know someone through a closed door?</span>
+      </div>
+    </a>
+    <a id="box3" class="box" style="background:#449a44;">
+    	<div class="box-image" style="background:url(asset/dust.png)"></div>
+      <div class="box-title">
+        <span>DUST</span>
+        <span class="box-type">FANTASY, 26 MINUTES</span>
+        <span class="box-description">Dust is set in a harsh and unpredictable natural environment. A socially marginalized tracker teams up with a black-market merchant to save the society.</span>
+      </div>
+    </a>
+    <a id="box4" class="box" style="background:#d4d2d2">
+    	<div class="box-image" style="background:url(asset/zari.jpeg)"></div>
+      <div class="box-title">
+        <span>ZARI</span>
+        <span class="box-type">SCI-FI, 18 MINUTES</span>
+        <span class="box-description">An outdated and seemingly limited household robot attempts to communicate with the family dog.</span>
+      </div>
+    </a>
+    <a id="box5" class="box" style="background:#607d8b">
+    	<div ></div>
+    </a>
+</div>
+<div class="video-container">
+  <a><div class="back-button">Go back to homepage</div></a>
+  <div id="video1" class="video">
+    
+  </div>
+  <div id="video2" class="video">
+    <div class="video-title">Juniper Crescent</div>
+    <iframe id="juniper-video" width="560" height="315" src="https://www.youtube.com/embed/MdUieFW0nXA" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div id="video3" class="video">
+    <div class="video-title">Dust</div>
+    <iframe src="https://player.vimeo.com/video/183239997" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+  <div id="video4" class="video">
+    <div class="video-title">Zari</div>
+    <iframe src="https://player.vimeo.com/video/98398778?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+  <div id="video5" class="video">
+
+
+  <a class="back-button" style="cursor:pointer"><img src="asset/back.png"></img></a>
+  <div class="video">
+  </div>
+</div>
+<script>
+
+
+$(".box").click(function(){
+  $(".boxes").hide();
+  $(".video-container").show();
+});
+
+
+$("#box2").click(function(){
+  $("#video2").show();
+  $("#video1").hide();
+  $("#video3").hide();
+  $("#video4").hide();
+  $("#video5").hide();
+});
+
+$("#box3").click(function(){
+  $("#video3").show();
+  $("#video1").hide();
+  $("#video2").hide();
+  $("#video4").hide();
+  $("#video5").hide();
+});
+
+$("#box4").click(function(){
+  $("#video4").show();
+  $("#video1").hide();
+  $("#video2").hide();
+  $("#video3").hide();
+  $("#video5").hide();
+});
+
+
+$("#box3").click(function(){
+  window.history.pushState('obj', 'Dust short movie', '#/dust');
+  event.preventDefault();
+});
+
+$(".back-button").click(function(){
+  $(".boxes").show();
+  var video = $("#juniper-video").attr("src");
+  $("#juniper-video").attr("src","");
+  $("#juniper-video").attr("src",video);
+  window.history.pushState('obj', 'home', ' ');
+  event.preventDefault();
+});
+
+
+function isTouchDevice(){
+    return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+
+/*if(isTouchDevice()===true) {
+    alert('Touch Device'); 
+}
+else {
+    alert('Not a Touch Device'); //your logic for non touch device
+}*/
+
+    $("#box1").hover(function(){
+      $(this).css({
+          'transform':'translate3d(5vw, 0px, 0px) scale(1.5)'
+      });
+      $("#box2").css({
+          'transform': 'translate3d(10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box3").css({
+          'transform': 'translate3d(10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box4").css({
+          'transform': 'translate3d(10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box5").css({
+          'transform': 'translate3d(10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+  }, function(){
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px)'
+      });
+      $("#box2").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box3").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box4").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box5").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+  });
+
+  $("#box2").hover(function(){
+    $("#box2 .box-description").addClass("opacity-show");
+    $(this).css({
+        'transform':'translate3d(0px, 0px, 0px) scale(1.5)'
+    });
+    $("#box1").css({
+        'transform': 'translate3d(-5vw, 0px, 0px)',
+        'opacity': '0.3'
+   });
+    $("#box3").css({
+        'transform': 'translate3d(5vw, 0px, 0px)',
+        'opacity': '0.3'
+   });
+    $("#box4").css({
+        'transform': 'translate3d(5vw, 0px, 0px)',
+        'opacity': '0.3'
+   });
+    $("#box5").css({
+        'transform': 'translate3d(5vw, 0px, 0px)',
+        'opacity': '0.3'
+   });
+}, function(){
+    $("#box2 .box-description").removeClass("opacity-show");
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px)'
+      });
+      $("#box1").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box3").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box4").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box5").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+  });
+
+  $("#box3").hover(function(){
+      $("#box3 .box-description").addClass("opacity-show");
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px) scale(1.5)'
+      });
+      $("#box1").css({
+          'transform': 'translate3d(-5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box2").css({
+          'transform': 'translate3d(-5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box4").css({
+          'transform': 'translate3d(5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box5").css({
+          'transform': 'translate3d(5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+  }, function(){
+     $("#box3 .box-description").removeClass("opacity-show");
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px)'
+      });
+      $("#box1").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box2").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box4").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box5").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+  });
+
+  $("#box4").hover(function(){
+      $("#box4 .box-description").addClass("opacity-show");
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px) scale(1.5)'
+      });
+      $("#box1").css({
+          'transform': 'translate3d(-5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box2").css({
+          'transform': 'translate3d(-5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box3").css({
+          'transform': 'translate3d(-5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box5").css({
+          'transform': 'translate3d(5vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+  }, function(){
+      $("#box4 .box-description").removeClass("opacity-show");
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px)'
+      });
+      $("#box1").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box2").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box3").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box5").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+  });
+
+  $("#box5").hover(function(){
+      $(this).css({
+          'transform':'translate3d(-5vw, 0px, 0px) scale(1.5)'
+      });
+      $("#box1").css({
+          'transform': 'translate3d(-10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box2").css({
+          'transform': 'translate3d(-10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box3").css({
+          'transform': 'translate3d(-10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+      $("#box4").css({
+          'transform': 'translate3d(-10vw, 0px, 0px)',
+          'opacity': '0.3'
+     });
+  }, function(){
+      $(this).css({
+          'transform':'translate3d(0px, 0px, 0px)'
+      });
+      $("#box1").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box2").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box3").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+      $("#box4").css({
+      'transform': 'translate3d(0px, 0px, 0px)',
+      'opacity': '1'
+     });
+  });
+  
+
+
+ 
+</script>
+</body>
+</html>

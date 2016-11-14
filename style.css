@@ -1,0 +1,156 @@
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    font: 400 16px/1 Roboto,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.boxes {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    white-space: nowrap;
+    background:#000;
+}
+.box {
+    position: relative;
+    display: inline-block;
+    width: 20vw;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: normal;
+    background-color: #000;
+    transition-property: opacity,-webkit-transform;
+    transition-property: transform,opacity;
+    transition-property: transform,opacity,-webkit-transform;
+    transition-duration: .45s;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    will-change: transform,opacity;
+    overflow: hidden;
+    background-size:contain;
+    background-attachment: fixed;
+    background-position: center; 
+    background:#000;
+}
+
+.box-image{
+    background-size: cover !important;
+    background-position: 50% !important;
+    height: 100% !important;
+}
+
+.box-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    transition-duration: .45s;
+    transition-delay: .2s;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    will-change: transform;
+    filter: url(data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><f…eNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter);
+    -webkit-filter: drop-shadow(1px 2px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(1px 2px 2px rgba(0,0,0,.5));
+    color: white;
+    font-size:26px;
+    font-weight:bolder;
+}
+
+.box-type{
+    font-size:18px; 
+    margin-top:20px; 
+    font-weight: 100;
+}
+
+.box-description{
+    width:16vw;
+    height:54px;
+    filter: url(data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><f…eNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter);
+    -webkit-filter: drop-shadow(1px 2px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(1px 2px 2px rgba(0,0,0,.5));
+    font: 400 16px/1 Roboto,sans-serif;
+    font-size: 12px;
+    color: #fff;
+    line-height: 17px;
+    opacity:0;
+    text-align: center;
+}
+
+.opacity-show{
+    opacity:1;
+    -webkit-transform: translate3d(0,25px,0);
+    transform: translate3d(0,25px,0);
+}
+
+.video-container{
+    background:#d4d2d2;
+    width:100vw;
+    height:100vw;
+    overflow:hidden;
+}
+
+.video{
+    width: 960px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:54px;
+    display:none;
+}
+
+.video-title{
+    font-size:26px;
+    font-weight:bolder;
+    margin-bottom:20px;
+}
+
+.back-button{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2%;
+    cursor:pointer;
+    color: #0000EE
+}
+
+@media only screen and (max-device-width: 768px){
+    .boxes{
+        width: 100vw;
+        height: 100vh;
+        white-space: nowrap;
+        background:#000;
+        display: block;
+    }
+    .box {
+        width: 100%;
+        height: 20%;
+        display:block;
+    }
+}
+
+@media only screen and (max-device-width: 480px){}
