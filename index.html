@@ -55,7 +55,8 @@
 <div class="video-container">
   <a><div class="back-button">Go back to homepage</div></a>
   <div id="video1" class="video">
-    
+    <div class="video-title">Uncanny</div>
+    <iframe src="https://player.vimeo.com/video/147365861" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
   <div id="video2" class="video">
     <div class="video-title">Juniper Crescent</div>
@@ -70,10 +71,8 @@
     <iframe src="https://player.vimeo.com/video/183239997" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
   <div id="video5" class="video">
-
-
-  <a class="back-button" style="cursor:pointer"><img src="asset/back.png"></img></a>
-  <div class="video">
+    <div class="video-title">Memory 2.0</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cd2ka3-hvKA" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
 <script>
@@ -84,6 +83,13 @@ $(".box").click(function(){
   $(".video-container").show();
 });
 
+$("#box1").click(function(){
+  $("#video1").show();
+  $("#video2").hide();
+  $("#video3").hide();
+  $("#video4").hide();
+  $("#video5").hide();
+});
 
 $("#box2").click(function(){
   $("#video2").show();
@@ -107,6 +113,14 @@ $("#box4").click(function(){
   $("#video2").hide();
   $("#video3").hide();
   $("#video5").hide();
+});
+
+$("#box5").click(function(){
+  $("#video5").show();
+  $("#video1").hide();
+  $("#video2").hide();
+  $("#video3").hide();
+  $("#video4").hide();
 });
 
 
