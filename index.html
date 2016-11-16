@@ -11,7 +11,12 @@
 <body>
 <div class="boxes">
 	  <a id="box1" class="box" style="background:#333383">
-      <div class="box-image"></div>
+      <div class="box-image" style="background:url(asset/uncanny.jpg)"></div>
+      <div class="box-title">
+        <span>UNCANNY</span>
+        <span class="box-type">SCI-FI, 7 MINUTES</span>
+        <span class="box-description">In the slums of the future, virtual reality junkies satisfy their violent impulses in online entertainment. An expert player discovers that the line between games and reality is starting to fade away...</span>
+      </div>
     </a>
     <a id="box2" class="box" style="background:#dcca75">
     	<div class="box-image" style="background:url(asset/jupiler.png)"></div>
@@ -22,6 +27,15 @@
       </div>
     </a>
     <a id="box3" class="box" style="background:#449a44;">
+      <div class="box-image" style="background:url(asset/zari.jpeg)"></div>
+      <div class="box-title">
+        <span>ZARI</span>
+        <span class="box-type">SCI-FI, 18 MINUTES</span>
+        <span class="box-description">An outdated and seemingly limited household robot attempts to communicate with the family dog.</span>
+      </div>
+    	
+    </a>
+    <a id="box4" class="box" style="background:#d4d2d2">
     	<div class="box-image" style="background:url(asset/dust.png)"></div>
       <div class="box-title">
         <span>DUST</span>
@@ -29,16 +43,13 @@
         <span class="box-description">Dust is set in a harsh and unpredictable natural environment. A socially marginalized tracker teams up with a black-market merchant to save the society.</span>
       </div>
     </a>
-    <a id="box4" class="box" style="background:#d4d2d2">
-    	<div class="box-image" style="background:url(asset/zari.jpeg)"></div>
-      <div class="box-title">
-        <span>ZARI</span>
-        <span class="box-type">SCI-FI, 18 MINUTES</span>
-        <span class="box-description">An outdated and seemingly limited household robot attempts to communicate with the family dog.</span>
-      </div>
-    </a>
     <a id="box5" class="box" style="background:#607d8b">
-    	<div ></div>
+    	<div class="box-image" style="background:url(asset/memoryv2.jpg)"></div>
+      <div class="box-title">
+        <span>MEMORY 2.0</span>
+        <span class="box-type">LOVE, 11 MINUTES</span>
+        <span class="box-description">A tale of love lost in the distant future where people relive their fondest memories with virtual reality.</span>
+      </div>
     </a>
 </div>
 <div class="video-container">
@@ -51,12 +62,12 @@
     <iframe id="juniper-video" width="560" height="315" src="https://www.youtube.com/embed/MdUieFW0nXA" frameborder="0" allowfullscreen></iframe>
   </div>
   <div id="video3" class="video">
-    <div class="video-title">Dust</div>
-    <iframe src="https://player.vimeo.com/video/183239997" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-  <div id="video4" class="video">
     <div class="video-title">Zari</div>
     <iframe src="https://player.vimeo.com/video/98398778?badge=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+  <div id="video4" class="video">
+    <div class="video-title">Dust</div>
+    <iframe src="https://player.vimeo.com/video/183239997" width="640" height="267" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
   <div id="video5" class="video">
 
@@ -126,6 +137,7 @@ else {
 }*/
 
     $("#box1").hover(function(){
+      $("#box1 .box-description").addClass("opacity-show");
       $(this).css({
           'transform':'translate3d(5vw, 0px, 0px) scale(1.5)'
       });
@@ -146,6 +158,7 @@ else {
           'opacity': '0.3'
      });
   }, function(){
+      $("#box1 .box-description").removeClass("opacity-show");
       $(this).css({
           'transform':'translate3d(0px, 0px, 0px)'
       });
@@ -300,6 +313,7 @@ else {
   });
 
   $("#box5").hover(function(){
+      $("#box5 .box-description").addClass("opacity-show");
       $(this).css({
           'transform':'translate3d(-5vw, 0px, 0px) scale(1.5)'
       });
@@ -320,6 +334,7 @@ else {
           'opacity': '0.3'
      });
   }, function(){
+      $("#box5 .box-description").removeClass("opacity-show");
       $(this).css({
           'transform':'translate3d(0px, 0px, 0px)'
       });

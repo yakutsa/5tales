@@ -106,7 +106,7 @@ body {
 }
 
 .video-container{
-    background:#d4d2d2;
+    background:#f4f4f4;
     width:100vw;
     height:100vw;
     overflow:hidden;
@@ -151,6 +151,14 @@ body {
         height: 20%;
         display:block;
     }
+
+    .video{
+        width: 80%;
+    }
 }
 
-@media only screen and (max-device-width: 480px){}
+@media only screen and (max-device-width: 480px){
+    .video{
+        width: 80%;
+    }
+}
